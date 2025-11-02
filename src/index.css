@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Minimal Design System */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Neutral Color Palette */
+  --color-bg-primary: #f8f9fa;
+  --color-bg-secondary: #ffffff;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a5568;
+  --color-accent: #1e3a8a; /* Navy blue */
+  --color-accent-light: #3b82f6; /* Light blue */
+  --color-border: #e2e8f0;
+  
+  /* Glassmorphism variables for navbar */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-blur: blur(20px) saturate(180%);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-accent: #60a5fa;
+  --color-accent-light: #93c5fd;
+  --color-border: #334155;
+  
+  --glass-bg: rgba(30, 41, 59, 0.8);
+  --glass-border: rgba(30, 41, 59, 0.9);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  html {
+    @apply scroll-smooth;
+    @apply h-full;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Soft neutral gradient background */
+    background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+  }
+  
+  body {
+    @apply min-h-screen;
+    @apply m-0;
+    @apply p-0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--color-text-primary);
+    background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .dark body {
+    background: linear-gradient(to bottom, #0f172a 0%, #1e293b 100%);
+  }
+  
+  #root {
+    @apply min-h-screen;
+    background: transparent;
+  }
+  
+  /* Improved typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+  }
+  
+  p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  /* Navbar Glassmorphism Effect */
+  .glass-nav {
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    @apply sticky top-0 z-50;
+    @apply transition-all duration-300;
+  }
+  
+  /* Navbar Link Styles - Bold, Uppercase with Smooth Transitions */
+  .nav-link {
+    @apply uppercase;
+    @apply font-bold;
+    @apply text-sm;
+    @apply tracking-wider;
+    @apply px-4 py-2;
+    @apply rounded-lg;
+    @apply transition-all duration-300;
+    @apply relative;
+    color: var(--color-text-secondary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .nav-link:hover {
+    color: var(--color-text-primary);
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-link.active {
+    color: var(--color-accent);
+    background: rgba(30, 58, 138, 0.1);
+  }
+  
+  .dark .nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .dark .nav-link.active {
+    background: rgba(96, 165, 250, 0.15);
+    color: var(--color-accent-light);
+  }
+  
+  /* Minimal Card Component */
+  .glass-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    @apply rounded-2xl;
+    @apply p-6;
+    @apply transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    @apply transform translate-y-[-2px];
+  }
+  
+  .dark .glass-card {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-border);
+  }
+  
+  /* Modern Button Styles */
+  .btn-primary {
+    background: var(--color-accent);
+    color: white;
+    @apply px-6 py-3;
+    @apply rounded-lg;
+    @apply font-semibold;
+    @apply text-base;
+    @apply transition-all duration-300;
+    @apply shadow-md;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background: var(--color-accent-light);
+    @apply shadow-lg;
+    @apply transform translate-y-[-2px];
+  }
+  
+  .btn-primary:active {
+    @apply transform translate-y-0;
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-accent);
+    @apply px-6 py-3;
+    @apply rounded-lg;
+    @apply font-semibold;
+    @apply text-base;
+    @apply border-2;
+    border-color: var(--color-accent);
+    @apply transition-all duration-300;
+  }
+  
+  .btn-secondary:hover {
+    background: var(--color-accent);
+    color: white;
+    @apply transform translate-y-[-2px];
+    @apply shadow-md;
+  }
+  
+  .dark .btn-primary {
+    background: var(--color-accent-light);
+  }
+  
+  .dark .btn-primary:hover {
+    background: var(--color-accent);
+  }
+  
+  /* Section Title with Minimal Style */
+  .section-title {
+    @apply text-4xl md:text-5xl;
+    @apply font-bold;
+    @apply mb-12;
+    @apply text-center;
+    color: var(--color-text-primary);
+    letter-spacing: -0.03em;
+  }
+  
+  /* Input Styles */
+  .input-modern {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    @apply rounded-lg;
+    @apply px-4 py-3;
+    @apply w-full;
+    @apply transition-all duration-300;
+    font-size: 16px;
+  }
+  
+  .input-modern:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  }
+  
+  .input-modern::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+  }
+  
+  .dark .input-modern:focus {
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+  }
+  
+  /* Glass utility for subtle effects */
+  .glass {
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    @apply rounded-lg;
+    @apply p-3;
+  }
+  
+  .dark .glass {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(30, 41, 59, 0.8);
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-shadow-white {
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  }
+}
