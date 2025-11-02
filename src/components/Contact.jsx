@@ -128,11 +128,11 @@ const Contact = () => {
         >
           Or reach out directly at{' '}
           <a 
-            href="mailto:dish.dudhat@example.com" 
+            href="mailto:dishdudhat@gmail.com" 
             className="font-semibold hover:underline transition-all"
             style={{ color: 'var(--color-accent)' }}
           >
-            dish.dudhat@example.com
+            dishdudhat85@gmail.com
           </a>
         </motion.p>
       </div>

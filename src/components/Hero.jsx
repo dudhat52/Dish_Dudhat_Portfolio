@@ -33,7 +33,7 @@ const Hero = () => {
             className="text-xl md:text-2xl mb-8 font-medium"
             style={{ color: 'var(--color-accent)' }}
           >
-            Full Stack Developer
+            Software Developer
           </motion.p>
           
           {/* Description */}
@@ -44,7 +44,7 @@ const Hero = () => {
             className="text-lg md:text-xl mb-12 max-w-2xl mx-auto"
             style={{ color: 'var(--color-text-secondary)' }}
           >
-            Crafting beautiful and functional web experiences with modern technologies
+            Building impactful, user-focused solutions with modern technologies
           </motion.p>
           
           {/* CTA Buttons */}

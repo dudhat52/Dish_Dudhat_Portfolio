@@ -9,11 +9,11 @@ import {
 
 const Footer = () => {
   const socialLinks = [
-    { icon: FaGithub, url: 'https://github.com', label: 'GitHub' },
-    { icon: FaLinkedin, url: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaTwitter, url: 'https://twitter.com', label: 'Twitter' },
-    { icon: FaInstagram, url: 'https://instagram.com', label: 'Instagram' },
-    { icon: FaEnvelope, url: 'mailto:dish.dudhat@example.com', label: 'Email' },
+    { icon: FaGithub, url: 'https://github.com/dudhat52', label: 'GitHub' },
+    { icon: FaLinkedin, url: 'https://linkedin.com/in/dish-dudhat', label: 'LinkedIn' },
+    { icon: FaTwitter, url: 'https://twitter.com/dishdudhat', label: 'Twitter' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/dessyy._145/', label: 'Instagram' },
+    { icon: FaEnvelope, url: 'mailto:dishdudhat85@gmail.com', label: 'Email' },
   ]
 
   return (
