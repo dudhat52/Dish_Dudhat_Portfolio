@@ -62,7 +62,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="input-modern"
-                placeholder="Your name"
+                placeholder="Your Name"
               />
             </div>
             
@@ -78,7 +78,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="input-modern"
-                placeholder="your.email@example.com"
+                placeholder="Email Address"
               />
             </div>
             
