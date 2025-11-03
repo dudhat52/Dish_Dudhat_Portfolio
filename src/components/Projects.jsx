@@ -17,9 +17,9 @@ const Projects = () => {
       image: '/image.png',
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative task management application with real-time updates and team collaboration features.',
-      tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Socket.io'],
+      title: 'Online Store Management System',
+      description: 'It is a console-based C++ application that simulates a simplified online store, allowing users to view products, make purchases, and generate invoices.',
+      tech: ['C++', 'Console-based', 'File Handling', 'OOP'],
       github: 'https://github.com/dudhat52/online-store-cpp',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     },
